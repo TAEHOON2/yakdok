@@ -2,7 +2,9 @@
   <h1>다음 URL을 맞출 사람한테 뿌리세요~</h1>
   <h2>yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%= @myroom.roomnumber%></h2>
   <br>
-  
+  <%= @month = "" %>
+  <%= @day = "" %>
+  <%= @myroom.roomnumber.split("-")[1] %>/<%= @myroom.roomnumber.split("-")[2] %>
   
   
   <p> 되는 시간을 체크/드래그해라</p>
@@ -20,12 +22,7 @@
   <hr>
   
   
-    <%= form_tag home_siganyakdokcreate_path do %>
-      <%=hidden_field_tag "roomnumber", @myroom.roomnumber%>
-      <%= hidden_field_tag "sigan", @chosensigan %>
-      <%= hidden_field_tag "count", @nalja %>
-      <%= button_to "추가하기", home_siganyakdokcreate_path, method:"post" %>
-     <% end %>
+
      
   
 </div>
@@ -74,8 +71,11 @@ jQuery(function($){
 
 </script>
 <%= form_tag home_siganyakdokcreate_path do %>
- <%= text_field_tag 'resultNum' %>
- <%= submit_tag %>
+<%=hidden_field_tag "roomnumber", @myroom.roomnumber%>
+<%= hidden_field_tag "sigan", @chosensigan %>
+<%= hidden_field_tag "count", @nalja %>
+<%= text_field_tag 'resultNum' %>
+<%= submit_tag %>
 <% end %>
 
 <button type="button" class="btn btn-outline btn-primary pull-right" id="selectBtn">선택</button>

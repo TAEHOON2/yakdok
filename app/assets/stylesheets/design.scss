@@ -172,9 +172,6 @@ article {
     font-size: 13px;
 }
 
-#timetable tbody {
-    background-color: white;
-}
 
 
 .text4 {
@@ -210,9 +207,24 @@ article {
 }
 
 
+.green {
+    width: 30px;
+    height: 10px;
+    vertical-align: middle;
+    display: inline-block;
+}
 .verygreen {
     background-color: #006400;
-    width: 30px;
-    height: 15px;
-    float: right;
+}
+
+.sogreen {
+    background-color: #2e8b57;
+}
+
+.okgreen {
+    background-color: #32cd32;
+}
+
+.weakgreen {
+    background-color: #adff2f;
 }

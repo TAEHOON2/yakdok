@@ -1,47 +1,81 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Selectable - Serialize</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
- 
-  <style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #FECA40; }
-  #selectable .ui-selected { background: #F39814; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0;}
-  #selectable div { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
-  </style>
-  
-  
-  <script>
-$( function() {
-    $( "#selectable" ).selectable({
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable div" ).index( this );
-          result.append( " /" + ( index + 1 ) );
-        });
-      }
-    });
-  } );
-  </script>
-</head>
-<body>
- 
-<p id="feedback">
-<span>You've selected:</span> <span id="select-result">none</span>.
-</p>
- 
-<div class="container" id="selectable">
- 	<% for i in 1..40 do %>
-	 <div class="check"><%="#{i}"%></div>
-	<% end %>
-</div>
 
- 
-</body>
-</html>
+<script>
+jQuery(function($){
+	$( document )
+		.drag("start",function( ev, dd ){
+			return $('<div class="selection" />')
+				.css('opacity', .65 )
+				.appendTo( document.body );
+		})
+		.drag(function( ev, dd ){
+			$( dd.proxy ).css({
+				top: Math.min( ev.pageY, dd.startY ),
+				left: Math.min( ev.pageX, dd.startX ),
+				height: Math.abs( ev.pageY - dd.startY ),
+				width: Math.abs( ev.pageX - dd.startX )
+			});
+		})
+		.drag("end",function( ev, dd ){
+			$( dd.proxy ).remove();
+		});
+		
+	$('.table td')
+		.drop("start",function(){
+			$( this ).addClass("active");
+		})
+		.drop(function( ev, dd ){
+			$( this ).toggleClass("dropped");
+		})
+		.drop("end",function(){
+			$( this ).removeClass("active");
+		});
+			
+	$.drop({ multi: true });
+	  $(".dropped").prop("checked",true)
+	 //	$('input:checkbox[id="check"]').attr("checked", true); 
+
+});	
+</script>
+
+<div class="container-for-table">
+
+    <table class="table" id="timetable">
+          <thead>
+            <tr class="thead-color">
+              <th class="timenumber">교시</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td> <input type="checkbox" name="period1" id="hooni"/></td>
+              <td> <input type="checkbox" name="period11" id="hooni"/></td>
+              <td> <input type="checkbox" name="period21" id="hooni"/></td>
+              <td> <input type="checkbox" name="period31" id="hooni"/></td>
+              <td> <input type="checkbox" name="period41" id="hooni"/></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td> <input type="checkbox" name="period2" id="hooni"/></td>
+              <td> <input type="checkbox" name="period12" id="hooni"/></td>
+              <td> <input type="checkbox" name="period22" id="hooni"/></td>
+              <td> <input type="checkbox" name="period32" id="hooni"/></td>
+              <td> <input type="checkbox" name="period42" id="hooni"/></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td> <input type="checkbox" name="period3" id="hooni"/></td>
+              <td> <input type="checkbox" name="period13" id="hooni"/></td>
+              <td> <input type="checkbox" name="period23" id="hooni"/></td>
+              <td> <input type="checkbox" name="period33" id="hooni"/></td>
+              <td> <input type="checkbox" name="period43" id="hooni"/></td>
+            </tr>
+            <tr>
+          </tbody>
+    </table>
+ </div>

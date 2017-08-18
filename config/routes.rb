@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   
   get 'home/jungbosujung'
   
+  post 'gyosiyakdoks/gyosijungbosave'
+  get 'gyosiyakdoks/gyosijungboview'
+  
   
   
   

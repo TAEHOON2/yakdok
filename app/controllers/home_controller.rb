@@ -10,6 +10,7 @@ class HomeController < ApplicationController
   
   
   def siganpage # 시간 테이블 나오는 페이지
+    @datefrom = params[:datepicker1]
     @yakdokroom= Yakdokroom.where(roomnumber: params[:yakdokroom_roomnumber])
     @myroom= @yakdokroom.first
   end
@@ -19,7 +20,7 @@ class HomeController < ApplicationController
     
   #   @yakdok= Yakdokroom.create()
   #   @randomstring= ([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(6).join
-  #   @yakdok.update(yakdoktype:"gyosiyakdok", roomnumber: @randomstring)
+  #   @yakdok.update(yakdoktype:"Usergyosi", roomnumber: @randomstring)
 
   #   # redirect_to home_gyosipage_path(:yakdok => @yakdok.id)     
    
@@ -27,66 +28,66 @@ class HomeController < ApplicationController
   #   redirect_to "/home/gyosipage/#{@randomstring}"
   #   # redirect_to "/home/gyosipage/#{@yakdok.id}"
    
-  # end       태훈파트는 gyosiyakdoks 컨트롤러로 옮겼습니다
+  # end       태훈파트는 Usergyosis 컨트롤러로 옮겼습니다
   def siganfrom
   end
   def siganpagecreate #시간base로 검색하는 것 Yakdokroom 모델에 Yakdok 하나 create시키는 액션
-    
+    @datefrom = params[:datepicker1]
     @yakdok= Yakdokroom.create()
-    @randomstring= ([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(6).join
+    @randomstring= ([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(6).join + @datefrom
     @yakdok.update(yakdoktype:"siganyakdok", roomnumber: @randomstring)
-
     redirect_to "/home/siganpage/#{@randomstring}"
+    # redirect_to controller: 'home', action: "siganpage/#{@randomstring}",  something: 'else'
   end
   
-  # def gyosiyakdokcreate
+  # def Usergyosicreate
   #   # if@머시기 != 0
   #     # @ ++
   #     #@.save
-  #     @findyakdok=Gyosiyakdok.where(roomnumber: params[:roomnumber])
+  #     @findyakdok=Usergyosi.where(roomnumber: params[:roomnumber])
   #     @myyakdok=@findyakdok.all
-  #     @myyakdok.update(count:"8")
-  #   # @gyosiresult = Gyosiyakdok.update(count: "4", gyosi: "월요일 1교시", roomnumber: params[:roomnumber])
+  #     @myyakdok.update(count:"8", email: current_user.email, name: current_user.name, user_id: current_user.id)
+  #   # @gyosiresult = Usergyosi.update(count: "4", gyosi: "월요일 1교시", roomnumber: params[:roomnumber])
   #   redirect_to controller: 'home', action: 'gyosiresult', yakdokroom: @myroom
     
-  # end         태훈파트. gyosiyakdoks 컨트롤러로 옮겼습니다
+  # end         태훈파트. Usergyosis 컨트롤러로 옮겼습니다
   
   def siganyakdokcreate
     @myroom = params[:roomnumber]
-    @siganyakdok= Siganyakdok.create(count: params[:resultNum], sigan: params[:resultNum], roomnumber: params[:roomnumber])
+    @siganyakdok= Siganyakdok.create(count: "12", sigan: params[:resultNum], roomnumber: params[:roomnumber])
     redirect_to controller: 'home', action: 'siganresult', yakdokroom: @myroom
   end
   
 
   def siganresult
        @myroom = params[:yakdokroom]
-#     #앞에서 먼저 받은 내용물을 parsing
-#       @k = Siganyakdok.all
-#       @sum = []
-#       @howmany = 0
-#       @k.each do |x|
-#       if x["roomnumber"] == @myroom
-#       @sum << x["sigan"]
-#       @howmany = @howmany + 1
-#       end
-#       end 
-#       @chose = ""
-#       @sum.each do |x|
-#       @chose = x + "/" + @chose
-#       end
-#       @choseparse = @chose.split('/')
-# #여기부터 되는 시간 세는 함수들
+     #앞에서 먼저 받은 내용물을 parsing
+       @k = Siganyakdok.all
+       @sum = []
+       @howmany = 0
+       @k.each do |x|
+       if x["roomnumber"] == @myroom
+       @sum << x["sigan"]
+       @howmany = @howmany + 1
+       end
+       end 
+       @chose = ""
+       @sum.each do |x|
+       @chose = x + "/" + @chose
+       end
+       @choseparse = @chose.split('/')
+ #여기부터 되는 시간 세는 함수들
        @allpossible = []
        @mostpossible = []
        @halfpossible = []
        @notpossible = []
 
          for i in 1..280
-        if @choseparse.count("#{i}") == @howmany
+        if @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) == @howmany
            @allpossible << i
-        elsif @choseparse.count("#{i}") >= @howmany * 0.75
+        elsif @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) >= @howmany * 0.75
            @mostpossible << i
-        elsif @choseparse.count("#{i}") >= @howmany * 0.5
+        elsif @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) >= @howmany * 0.5
            @halfpossible << i
         else
           @notpossible << i
@@ -119,6 +120,7 @@ class HomeController < ApplicationController
   #     @yakdokmatrix[x[0]][x[1]] = @yakdokmatrix[x[0]][x[1]] + 1
   #   end
    def jungbosujung
+     
    end
    def usersigancreate
       # @count = ""

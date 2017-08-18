@@ -3,7 +3,7 @@ class CreateUsergyosis < ActiveRecord::Migration[5.1]
     create_table :usergyosis do |t|
       t.string :roomnumber
       t.text :gyosi
-      t.integer :count
+      t.integer :count, :default => 0
       t.belongs_to :user
       t.string :name
       t.string :email
