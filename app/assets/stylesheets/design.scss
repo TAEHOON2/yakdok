@@ -1,0 +1,218 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif !important;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f1f1f1 !important;
+}
+
+a:visited, a:link, a:hover {
+  text-decoration: none !important;
+  background-color: transparent;
+}
+
+
+#text5 {
+    font-size: 12px;
+    color: #4285f4;
+    font-weight: 600;
+}
+
+.text3 {
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+.text4 {
+    font-size: 12px;
+    color: #4d4d4d;
+    font-weight: 600;
+}
+
+.text6 {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+.info {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.logo{
+    text-align: center; 
+    margin: 0;
+}
+
+.logo > img {
+    width: 150px;
+    height: auto;
+} 
+
+.logo-big {
+    width: 250px;
+    height: auto;
+}
+
+article {
+    margin-top: 40px;
+    padding: 0 50px;
+}
+
+.login {
+    background-color: transparent;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    height: 50px;
+    padding: 14px;
+    background-color: white;
+    color: #555;
+    font-size: 15px;
+}
+
+#signup_btn {
+    background-color:#4285f4;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#facebook_btn {
+    background-color:#3b5998;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    color: white;
+    padding: 11px 0;
+}
+
+#signup_input {
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+
+.signchoice_btn {
+    margin-top: 10px;
+}
+
+.text-left {
+    text-align: left;
+    width: 100%;
+}
+
+.text-right{
+    text-align: right;
+    width: 100%;
+}
+
+
+#container {
+     padding: 0 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hello {
+    padding-top: 80px;
+}
+
+.hello_text {
+    margin-top: 20px;
+}
+
+.container-for-table {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+
+#timetable th, tr, td {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.timenumber {
+    width: 70px;
+}
+
+#timetable td {
+    font-size: 15px;
+    vertical-align: middle;
+    width: 100px;
+    height: auto;
+}
+
+.thead-color {
+    background-color: #F45942;
+    color: white;
+    font-size: 13px;
+}
+
+#timetable tbody {
+    background-color: white;
+}
+
+
+.text4 {
+    font-size: 15px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.fblogo {
+    height: 15px;
+    width: auto;
+    margin-bottom: 4px;
+    margin-right: 7px;
+}
+
+.maintitle1 {
+    font-size: 22px;
+	line-height: 30px;
+}
+
+.maintitle2 {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.maintitle3 {
+    font-size: 70px;
+	line-height: 70px;
+}
+
+.star_list {
+    list-style: none;
+}
+
+
+.verygreen {
+    background-color: #006400;
+    width: 30px;
+    height: 15px;
+    float: right;
+}

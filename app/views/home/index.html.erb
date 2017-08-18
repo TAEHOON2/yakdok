@@ -1,0 +1,19 @@
+<header id="main">
+  <div class="container cover">
+    
+    <div class="heading-text">
+      <h1 class="maintitle1">복잡했던 시간 약속</h1>
+      <h1 class="maintitle2">10초 만에</h1>
+      <h1 class="maintitle3">약똑</h1>
+    </div>
+    
+    <div class= "checkbox_main">
+      <div class="row ml-2">
+        <%= button_to "시간 기반", home_siganfrom_path, :class=> "hvr-sweep-to-right btn-choice firstbtn", :method => :get %> 
+      </div>
+      <div class="row ml-2">
+        <%= button_to "교시 기반", gyosiyakdoks_gyosipagecreate_path, :class=> "hvr-sweep-to-right btn-choice", :method => :post %>
+      </div>
+    
+  </div>
+</header>

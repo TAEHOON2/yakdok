@@ -1,0 +1,67 @@
+
+<script>
+jQuery(function($){
+	$( document )
+		.drag("start",function( ev, dd ){
+			return $('<div class="selection" />')
+				.css('opacity', .65 )
+				.appendTo( document.body );
+		})
+		.drag(function( ev, dd ){
+			$( dd.proxy ).css({
+				top: Math.min( ev.pageY, dd.startY ),
+				left: Math.min( ev.pageX, dd.startX ),
+				height: Math.abs( ev.pageY - dd.startY ),
+				width: Math.abs( ev.pageX - dd.startX )
+			});
+		})
+		.drag("end",function( ev, dd ){
+			$( dd.proxy ).remove();
+		});
+		
+	$('.drop')
+		.drop("start",function(){
+			$( this ).addClass("active");
+		})
+		.drop(function( ev, dd ){
+			$( this ).toggleClass("dropped");
+		})
+		.drop("end",function(){
+			$( this ).removeClass("active");
+		});
+			
+	$.drop({ multi: true });
+	
+	$("#selectBtn").click(function(){
+		var result = $(".dropped").text();
+		var array = new Array();
+		array.push(result);
+		 $("#resultNum").val(array);
+	});
+	
+	// var returnNum = $('.drop').addClass("available").append("1");
+	// console.log(returnNum)
+	//active와 dropped api확인해봐야 함. .text넣는 것 고려. 빼는 것도.
+});	
+
+</script>
+
+<h1>약똑 table</h1>
+
+<form>
+	name: <input type="text" id="resultNum" value="" />
+</form>
+<button type="button" class="btn btn-outline btn-primary pull-right" id="selectBtn">선택</button>
+
+<p id="feedback">
+<span>You've selected:</span> <span class="selected">none</span>.
+</p>
+
+
+<div class="container" id="select-table">
+ 	<% for i in 1..10 do %>
+	 <div class="drop" ><%="#{i}"%>/</div>
+	<% end %>	
+</div>
+
+	<input type="text" data-role="date" data-inline="true">
