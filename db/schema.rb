@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170818121627) do
   create_table "usergyosis", force: :cascade do |t|
     t.string "roomnumber"
     t.text "gyosi"
-    t.integer "count"
+    t.integer "count", default: 0
     t.integer "user_id"
     t.string "name"
     t.string "email"

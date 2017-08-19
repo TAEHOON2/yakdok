@@ -1,31 +1,36 @@
 <div class="container">
-  <h1>다음 URL을 맞출 사람한테 뿌리세요~</h1>
-  <h2>yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%= @myroom.roomnumber%></h2>
+  <p class="text4 mt-4">아래의 주소를 친구들에게 보내서<br> 함께 약똑을 잡아보세요!</p>
+  <p class="text6">yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%= @myroom.roomnumber%></p>
   <br>
   <%= @month = "" %>
   <%= @day = "" %>
   <%= @myroom.roomnumber.split("-")[1] %>/<%= @myroom.roomnumber.split("-")[2] %>
   
   
-  <p> 되는 시간을 체크/드래그해라</p>
-  <hr>
-  <p>테 이 블</p>
-  <% @nalja = "" %>
+
   <% if current_user.present? %>
-  <%= @chosensigan = Usersigan.find_by(user: current_user).sigan %>
+  <p class="text4">로그인을 한 이상 버튼만 눌러라. 나머지는 우리가 다 한다.</p>
+	  <%= @chosensigan = Usersigan.find_by(user: current_user).sigan %>
+	  <%= form_tag home_siganyakdokcreate_path do %>
+		<%=hidden_field_tag "roomnumber", @myroom.roomnumber%>
+		<%= hidden_field_tag "sigan", @chosensigan %>
+		<%= hidden_field_tag "count", @nalja %>
+		<%= hidden_field_tag "resultNum", @chosensigan %>
+		<%= submit_tag %>
+
+	
+		
+		<% end %>
   <!--if 구문 추가해서 만약 로그인 상태라면 본인 시간 사용할 수 있게 하도록! 기존 정보 사용이 가능합니다 라는 내용 추가
   및 @chosensigan에 기존 정보 가져오게 할 것-->
   <% else %>
-  <%= @chosensigan = "" %> <!--여기서는 주는 값 받을 것-->
-  <%= @chosensigan = "24/13/15/178/154/124" %>
-  <% end %>
-  <hr>
+ <p class="text4"> ** 되는 시간을 체크 혹은 드래그하세요 **</p>
+
+
   
   
 
-     
-  
-</div>
+
 
 
 <script>
@@ -70,18 +75,24 @@ jQuery(function($){
 });	
 
 </script>
-<%= form_tag home_siganyakdokcreate_path do %>
-<%=hidden_field_tag "roomnumber", @myroom.roomnumber%>
+<%= form_tag home_siganyakdokcreate_path do%>
+<%= hidden_field_tag "roomnumber", @myroom.roomnumber%>
 <%= hidden_field_tag "sigan", @chosensigan %>
 <%= hidden_field_tag "count", @nalja %>
 <%= text_field_tag 'resultNum' %>
 <%= submit_tag %>
 <% end %>
 
-<button type="button" class="btn btn-outline btn-primary pull-right" id="selectBtn">선택</button>
 
-<div class="container" id="select-table">
- 	<% for i in 1..10 do %>
+<div class="mt-4 lasthello" id="select-table">
+ 	<% for i in 1..280 do %>
 	 <div class="drop" ><%="#{i}"%>/</div>
 	<% end %>	
+</div>
+
+<% end %>
+<hr>
+
+     
+<button type="button" class="btn btn-lg " id="signup_btn">선택</button>
 </div>

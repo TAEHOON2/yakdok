@@ -34,53 +34,63 @@
                 <td class="sogreen">
                 <% elsif  @min1 < 0.75 && @min1 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min1 < 0.5 %>
+                <% elsif @min1 < 0.5 && @min1 > 0 %>
                 <td class="weakgreen">
+                <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
                <% if @min2 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min1 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min2 >= 0.75 && @min2 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min1 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min2 < 0.75 && @min2 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min1 < 0.5 %>
+                <% elsif @min2 < 0.5 && @min2 > 0 %>
                 <td class="weakgreen">
+                <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               
                <% if @min3 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min1 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min3 >= 0.75 && @min3 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min1 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min3 < 0.75 && @min3 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min1 < 0.5 %>
+                <% elsif @min3 < 0.5 && @min3 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
                <% if @min4 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min1 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min4 >= 0.75 && @min4 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min1 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min4 < 0.75 && @min4 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min1 < 0.5 %>
+                <% elsif @min4 < 0.5 && @min4 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
                <% if @min5 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min1 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min5 >= 0.75 && @min5 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min1 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min5 < 0.75 && @min5 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min1 < 0.5 %>
+                <% elsif @min5 < 0.5 && @min5 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
@@ -90,56 +100,67 @@
               
               <% if @min6 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min6 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min6 >= 0.75 && @min6 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min6 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min6 < 0.75 && @min6 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min6 < 0.5 %>
+                <% elsif @min6 < 0.5 && @min6 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min7 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min7 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min7 >= 0.75 && @min7 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min7 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min7 < 0.75 && @min7 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min7 < 0.5 %>
+                <% elsif @min7 < 0.5 && @min7 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min8 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min8 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min8 >= 0.75 && @min8 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min8 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min8 < 0.75 && @min8 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min8 < 0.5 %>
+                <% elsif @min8 < 0.5 && @min8 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>  
               
               <% if @min9 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min9 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min9 >= 0.75 && @min9 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min9 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min9 < 0.75 && @min9 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min9 < 0.5 %>
+                <% elsif @min9 < 0.5 && @min9 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
 
               <% if @min10 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min10 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min10 >= 0.75 && @min10 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min10 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min10 < 0.75 && @min10 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min10 < 0.5 %>
+                <% elsif @min10 < 0.5 && @min10 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+                  
               <% end %>
                 </td>
             </tr>
@@ -149,56 +170,66 @@
               
               <% if @min11 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min11 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min11 >= 0.75 && @min11 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min11 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min11 < 0.75 && @min11 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min11 < 0.5 %>
+                <% elsif @min11 < 0.5 && @min11 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min12 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min12 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min12 >= 0.75 && @min12 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min12 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min12 < 0.75 && @min12 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min12 < 0.5 %>
+                <% elsif @min12 < 0.5 && @min12 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min13 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min13 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min13 >= 0.75 && @min13 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min13 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min13 < 0.75 && @min13 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min13 < 0.5 %>
+                <% elsif @min13 < 0.5 && @min13 > 0%>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min14 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min14 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min14 >= 0.75 && @min14 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min14 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min14 < 0.75 && @min14 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min14 < 0.5 %>
+                <% elsif @min14 < 0.5 && @min14 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min15 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min15 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min15 >= 0.75 && @min15 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min15 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min15 < 0.75 && @min15 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min15 < 0.5 %>
+                <% elsif @min15 < 0.5 && @min15 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
@@ -207,56 +238,66 @@
               <th scope="row">4</th>
               <% if @min16 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min16 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min16 >= 0.75 && @min16 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min16 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min16 < 0.75 && @min16 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min16 < 0.5 %>
+                <% elsif @min16 < 0.5 && @min16 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min17 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min17 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min17 >= 0.75 && @min17 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min17 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min17 < 0.75 && @min17 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min17 < 0.5 %>
+                <% elsif @min17 < 0.5 && @min17 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min18 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min18 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min18 >= 0.75 && @min18 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min18 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min18 < 0.75 && @min18 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min18 < 0.5 %>
+                <% elsif @min18 < 0.5 && @min18 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min19 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min19 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min19 >= 0.75 && @min19 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min19 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min19 < 0.75 && @min19 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min19 < 0.5 %>
+                <% elsif @min19 < 0.5 && @min19 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min20 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min20 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min20 >= 0.75 && @min20 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min20 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min20 < 0.75 && @min20 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min20 < 0.5 %>
+                <% elsif @min20 < 0.5 && @min20 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
@@ -265,56 +306,66 @@
               <th scope="row">5</th>
               <% if @min21 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min21 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min21 >= 0.75 && @min21 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min21 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min21 < 0.75 && @min21 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min21 < 0.5 %>
+                <% elsif @min21 < 0.5 && @min21 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min22 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min22 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min22 >= 0.75 && @min22 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min22 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min22 < 0.75 && @min22 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min22 < 0.5 %>
+                <% elsif @min22 < 0.5 && @min22 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min23 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min23 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min23 >= 0.75 && @min23 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min23 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min23 < 0.75 && @min23 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min23 < 0.5 %>
+                <% elsif @min23 < 0.5 && @min23 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min24 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min24 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min24 >= 0.75 && @min24 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min24 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min24 < 0.75 && @min24 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min24 < 0.5 %>
+                <% elsif @min24 < 0.5 && @min24 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min25 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min25 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min25 >= 0.75 && @min25 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min25 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min25 < 0.75 && @min25 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min25 < 0.5 %>
+                <% elsif @min25 < 0.5 && @min25 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
@@ -324,56 +375,66 @@
               
               <% if @min26 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min26 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min26 >= 0.75 && @min26 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min26 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min26 < 0.75 && @min26 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min26 < 0.5 %>
+                <% elsif @min26 < 0.5 && @min26 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min27 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min27 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min27 >= 0.75 && @min27 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min27 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min27 < 0.75 && @min27 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min27 < 0.5 %>
+                <% elsif @min27 < 0.5 && @min27 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min28 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min28 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min28 >= 0.75 && @min28 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min28 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min28 < 0.75 && @min28 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min28 < 0.5 %>
+                <% elsif @min28 < 0.5 && @min28 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min29 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min29 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min29 >= 0.75 && @min29 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min29 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min29 < 0.75 && @min29 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min29 < 0.5 %>
+                <% elsif @min29 < 0.5 && @min29 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min30 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min30 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min30 >= 0.75 && @min30 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min30 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min30 < 0.75 && @min30 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min30 < 0.5 %>
+                <% elsif @min30 < 0.5 && @min30 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
@@ -382,56 +443,66 @@
               <th scope="row">7</th>
               <% if @min31 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min31 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min31 >= 0.75 && @min31 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min31 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min31 < 0.75 && @min31 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min31 < 0.5 %>
+                <% elsif @min31 < 0.5 && @min31 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min32 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min32 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min32 >= 0.75 && @min32 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min32 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min32 < 0.75 && @min32 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min32 < 0.5 %>
+                <% elsif @min32 < 0.5 && @min32 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min33 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min33 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min33 >= 0.75 && @min33 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min33 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min33 < 0.75 && @min33 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min33 < 0.5 %>
+                <% elsif @min33 < 0.5 && @min33 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
               <% if @min34 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min34 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min34 >= 0.75 && @min34 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min34 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min34 < 0.75 && @min34 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min34 < 0.5 %>
+                <% elsif @min34 < 0.5 && @min34 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
               <% if @min35 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min35 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min35 >= 0.75 && @min35 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min35 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min35 < 0.75 && @min35 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min35 < 0.5 %>
+                <% elsif @min35 < 0.5 && @min35 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
               
@@ -440,85 +511,220 @@
               <th scope="row">8</th>
                <% if @min36 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min36 >= 0.75 && @mn1 < 1 %>
+                <% elsif  @min36 >= 0.75 && @min36 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min36 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min36 < 0.75 && @min36 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min36 < 0.5 %>
+                <% elsif @min36 < 0.5 && @min36 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
                <% if @min37 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min37 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min37 >= 0.75 && @min37 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min37 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min37 < 0.75 && @min37 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min37 < 0.5 %>
+                <% elsif @min37 < 0.5 && @min37 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
                <% if @min38 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min38 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min38 >= 0.75 && @min38 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min38 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min38 < 0.75 && @min38 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min38 < 0.5 %>
+                <% elsif @min38 < 0.5 && @min38 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
                <% if @min39 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min39 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min39 >= 0.75 && @min39 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min39 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min39 < 0.75 && @min39 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min39 < 0.5 %>
+                <% elsif @min39 < 0.5 && @min39 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
                 
                <% if @min40 == 1 %>
                 <td class="verygreen">
-                <% elsif  @min40 >= 0.75 && @min1 < 1 %>
+                <% elsif  @min40 >= 0.75 && @min40 < 1 %>
                 <td class="sogreen">
-                <% elsif  @min40 < 0.75 && @min1 >= 0.5 %>
+                <% elsif  @min40 < 0.75 && @min40 >= 0.5 %>
                 <td class="okgreen">
-                <% else @min40 < 0.5 %>
+                <% elsif @min40 < 0.5 && @min40 > 0 %>
                 <td class="weakgreen">
+                   <% else %>
+                <td class="white">
               <% end %>
                 </td>
             </tr>
+            
             <tr>
               <th scope="row">9</th>
-              <td><%= (@besttime[8].count/@allparticipants.participants).round(2)%></td>
-              <td><%= (@besttime[18].count/@allparticipants.participants).round(2)%></td>
-              <td><%= (@besttime[28].count/@allparticipants.participants).round(2)%></td>
-              <td><%= (@besttime[38].count/@allparticipants.participants).round(2)%></td>
-              <td><%= (@besttime[48].count/@allparticipants.participants).round(2)%></td>
+              <% if @min41 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min41 >= 0.75 && @min41 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min41 < 0.75 && @min41 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min41 < 0.5 && @min41 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+              
+              <% if @min42 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min42 >= 0.75 && @min42 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min42 < 0.75 && @min42 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min42 < 0.5 && @min42 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+                
+              <% if @min43 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min43 >= 0.75 && @min43 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min43 < 0.75 && @min43 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min43 < 0.5 && @min43 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+                
+              <% if @min44 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min44 >= 0.75 && @min44 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min44 < 0.75 && @min44 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min44 < 0.5 && @min44 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+              
+              <% if @min45 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min45 >= 0.75 && @min45 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min45 < 0.75 && @min45 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min45 < 0.5 && @min45 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
             </tr>
+            
             <tr>
               <th scope="row">10</th>
-              <td> <%= (@besttime[9].count/@allparticipants.participants).round(2)%></td>
-              <td> <%= (@besttime[19].count/@allparticipants.participants).round(2)%></td>
-              <td> <%= (@besttime[29].count/@allparticipants.participants).round(2)%></td>
-              <td> <%= (@besttime[39].count/@allparticipants.participants).round(2)%></td>
-              <td> <%= (@besttime[49].count/@allparticipants.participants).round(2)%></td>
+              <% if @min46 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min46 >= 0.75 && @min46 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min46 < 0.75 && @min46 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min46 < 0.5 && @min46 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+              
+               <% if @min47 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min47 >= 0.75 && @min47 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min47 < 0.75 && @min47 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min47 < 0.5 && @min47 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+              
+               <% if @min48 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min48 >= 0.75 && @min48 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min48 < 0.75 && @min48 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min48 < 0.5 && @min48 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+                
+               <% if @min49 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min49 >= 0.75 && @min49 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min49 < 0.75 && @min49 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min49 < 0.5 && @min49 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
+              
+               <% if @min50 == 1 %>
+                <td class="verygreen">
+                <% elsif  @min50 >= 0.75 && @min50 < 1 %>
+                <td class="sogreen">
+                <% elsif  @min50 < 0.75 && @min50 >= 0.5 %>
+                <td class="okgreen">
+                <% elsif @min50 < 0.5 && @min50 > 0 %>
+                <td class="weakgreen">
+                   <% else %>
+                <td class="white">
+              <% end %>
+                </td>
             </tr>
    
           </tbody>
     </table>
  </div>
 
+<article>
+  <p class="text4">방 주소</p>
+  <p class="text6">https://yakdok-rails-five-ahnroonjang.c9users.io/home/gyosipage/<%= @myroom.roomnumber%></p>
+
+</article>
 
 <hr>
 
 <article class="mt-0">
-    <p class="text3 mt-4 mb-3">★ 명예의 전당 ★</p>
+    <p class="text3 mt-4 mb-3">우리 이때 만나</p>
     <p>
       <strong>1위: <%=@besttime.all.order(count: :desc)[0].gyosi%> (<%= @besttime.all.order(count: :desc)[0].count.to_i%>명)</strong><br>
       2위: <%=@besttime.all.order(count: :desc)[1].gyosi%> (<%= @besttime.all.order(count: :desc)[1].count.to_i%>명)<br>

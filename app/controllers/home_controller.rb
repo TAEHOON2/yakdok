@@ -83,18 +83,18 @@ class HomeController < ApplicationController
        @notpossible = []
 
          for i in 1..280
-        if @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) == @howmany
+        if @choseparse.count("#{i}") == @howmany
            @allpossible << i
-        elsif @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) >= @howmany * 0.75
+        elsif @choseparse.count("#{i}") >= @howmany * 0.75
            @mostpossible << i
-        elsif @choseparse.count("#{i}", email: current_user.email, name: current_user.name, user_id: current_user.id) >= @howmany * 0.5
+        elsif @choseparse.count("#{i}") >= @howmany * 0.5
            @halfpossible << i
         else
           @notpossible << i
         end
     end
   end
-    
+    #, email: current_user.email, name: current_user.name, user_id: current_user.id 위에 "i" 이거 사이에 얘네 왜 있는거지
 
     def usersiganinput
       
@@ -121,12 +121,10 @@ class HomeController < ApplicationController
   #   end
    def jungbosujung
      
+
    end
    def usersigancreate
-      # @count = ""
-      # @count = params[:count]
-      @sigan = params[:sigan]
-      Usersigan.create(sigan: @sigan, user: current_user, email: current_user.email)
+      Usersigan.create(sigan: params[:resultNum], user: current_user, email: current_user.email)
       redirect_to '/'
     end
   

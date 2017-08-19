@@ -10,10 +10,71 @@
 및 @chosensigan에 기존 정보 가져오게 할 것-->
 <% @chosensigan = "" %>
 <%= @chosensigan = "35/112/123/178/234/124/184/253/14" %>
+
+  
+  
+
+     
+  
+</div>
+
+
+<script>
+jQuery(function($){
+	$( document )
+		.drag("start",function( ev, dd ){
+			return $('<div class="selection" />')
+				.css('opacity', .65 )
+				.appendTo( document.body );
+		})
+		.drag(function( ev, dd ){
+			$( dd.proxy ).css({
+				top: Math.min( ev.pageY, dd.startY ),
+				left: Math.min( ev.pageX, dd.startX ),
+				height: Math.abs( ev.pageY - dd.startY ),
+				width: Math.abs( ev.pageX - dd.startX )
+			});
+		})
+		.drag("end",function( ev, dd ){
+			$( dd.proxy ).remove();
+		});
+		
+	$('.drop')
+		.drop("start",function(){
+			$( this ).addClass("active");
+		})
+		.drop(function( ev, dd ){
+			$( this ).toggleClass("dropped");
+		})
+		.drop("end",function(){
+			$( this ).removeClass("active");
+		});
+			
+	$.drop({ multi: true });
+	
+	$("#selectBtn").click(function(){
+		var result = $(".dropped").text();
+		var array = new Array();
+		array.push(result);
+		 $("#resultNum").val(array);
+	});
+});	
+
+</script>
+
+
+<button type="button" class="btn btn-outline btn-primary pull-right" id="selectBtn">선택</button>
+
+<div class="container" id="select-table">
+ 	<% for i in 1..10 do %>
+	 <div class="drop" ><%="#{i}"%>/</div>
+	<% end %>	
+</div>
+
 <hr>
 
 
   <%= form_tag home_usersigancreate_path do %>
-    <%= hidden_field_tag "sigan", @chosensigan %>
+    <%= text_field_tag 'resultNum' %>
     <%= button_to "저장하기", home_usersigancreate_path, method:"post" %>
    <% end %>

@@ -1,11 +1,9 @@
 <div class="container">
-    <p class="text3"> </p>
+ 
     <%= form_tag home_siganpagecreate_path do %>
-    <%= text_field_tag 'datepicker1' %>
-    <%= button_to "이날로부터 7일!", home_siganpagecreate_path, method:"post" %>
+    <p class="text3 mt-4 mb-1">아래를 클릭하세요</p><%= text_field_tag 'datepicker1'%>
+    <%= button_to "이 날로부터 7일!", home_siganpagecreate_path, method:"post", :class => "btn btn-lg btn-block", :id => "signup_btn" %>
         
-     <%= text_field_tag "datepicker", "", class: "hasdatepicker", placeholder: "원하는 날짜를 선택하세요" %>
-            <input type="text" id="datefrom" >
         
     <% end %>
     
@@ -31,5 +29,3 @@
     });
 
 </script>
-
-생년월일: <input type="text" id="datepicker1">

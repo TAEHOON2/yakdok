@@ -1,6 +1,4 @@
 
-
-
 <script>
 jQuery(function($){
 	$( document )
@@ -27,20 +25,12 @@ jQuery(function($){
 		})
 		.drop(function( ev, dd ){
 			$( this ).toggleClass("dropped");
-			if(document.getElementById('dropped').checked) {
-      $(this).checked();
-      } else {
-      $(this).unchecked();
-      };
-  		});
+		})
 		.drop("end",function(){
 			$( this ).removeClass("active");
 		});
+			
 	$.drop({ multi: true });
-	
-
-
-
 
 });	
 </script>
@@ -50,7 +40,7 @@ jQuery(function($){
 <article>
   <p class="text4">아래의 주소를 친구들에게 보내서<br> 함께 약똑을 잡아보세요!</p>
   <p class="text6">https://yakdok-rails-five-ahnroonjang.c9users.io/home/gyosipage/<%= @myroom.roomnumber%></p>
-  <p class="text4">** 가능한 시간 드래그 후 완료 버튼 클릭! **<p>
+  <p class="text4">** 가능한 시간 체크 후 완료 버튼 클릭! **<p>
 </article>
 
 <hr>
@@ -159,8 +149,11 @@ jQuery(function($){
       <div class="row">
         <%= hidden_field_tag "roomnumber", @myroom.roomnumber%>
         <%= button_to "추가하기", gyosiyakdoks_gyosiyakdokcreate_path, :method => "post", :id => "signup_btn", :class => "btn btn-lg btn-block" %>
+        <%= button_to "기존에 저장했던 정보로 제출", '/', :method => 'get' %>
        <% end %>
       </div>
+      
+      
     </div>
 
 </div>

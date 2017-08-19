@@ -34,8 +34,9 @@ Rails.application.routes.draw do
   post 'gyosiyakdoks/gyosijungbosave'
   get 'gyosiyakdoks/gyosijungboview'
   
+  post 'gyosiyakdoks/usergyosiupdate'
   
-  
+  get 'gyosiyakdoks/updatedgyosiview'
   
   # get 'home/gyosiresult/'
   # The priority is based upon order of creation: first created -> highest priority.

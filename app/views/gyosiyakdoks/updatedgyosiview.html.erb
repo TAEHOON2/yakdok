@@ -1,0 +1,352 @@
+<%= current_user.name%>님의 시간표입니다.<br>
+
+<span>   가능한 시간   :  </span> <div class="nicegreen green"></div>  
+<div class="container-for-table">
+
+    <table class="table" id="timetable">
+          <thead>
+            <tr class="thead-color">
+              <th class="timenumber">교시</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+               <% if @mygyosi[0].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+               <% end %>
+                </td>
+
+               <% if @mygyosi[10].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[20].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[30].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[40].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+               <% if @mygyosi[1].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[11].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[21].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[31].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[41].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+               <% if @mygyosi[2].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[12].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[22].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[32].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[42].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+               <% if @mygyosi[3].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[13].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[23].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[33].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[43].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+               <% if @mygyosi[4].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[14].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[24].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[34].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[44].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+               <% if @mygyosi[5].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[15].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[25].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[35].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[45].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+               <% if @mygyosi[6].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[16].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[26].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[36].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[46].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+               <% if @mygyosi[7].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[17].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[27].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[37].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[47].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <% if @mygyosi[8].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+              <% if @mygyosi[18].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+              <% if @mygyosi[28].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+              <% if @mygyosi[38].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+              <% if @mygyosi[48].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+               <% if @mygyosi[9].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[19].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[29].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[39].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+               <% if @mygyosi[49].count == 0 %>
+                <td class="white">
+                <% else %>
+                <td class="nicegreen">
+              <% end %>
+                </td>
+            </tr>
+   
+          </tbody>
+    </table>
+ </div>
