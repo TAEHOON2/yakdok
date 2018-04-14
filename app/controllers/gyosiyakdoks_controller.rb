@@ -517,8 +517,8 @@ class GyosiyakdoksController < ApplicationController
   end
   
   def usergyosiupdate
-      @findyakdok=Usergyosi.where(count:0)
-          
+      @findyakdok=Usergyosi.where(user_id: current_user.id)
+     
       @myyakdok1=@findyakdok[0]
       @myyakdok2=@findyakdok[1]
       @myyakdok3=@findyakdok[2]
@@ -842,7 +842,8 @@ class GyosiyakdoksController < ApplicationController
         @myyakdok50.count +=1
         @myyakdok50.save
       end
-  redirect_to gyosiyakdoks_updatedgyosiview_path
+      
+  redirect_to "/gyosiyakdoks/updatedgyosiview/#{@myyakdok1.email}"
   end
   
   def updatedgyosiview

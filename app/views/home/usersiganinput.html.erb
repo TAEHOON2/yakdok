@@ -8,16 +8,8 @@
 <p>테 이 블</p>
 <!--if 구문 추가해서 만약 로그인 상태라면 본인 시간 사용할 수 있게 하도록! 기존 정보 사용이 가능합니다 라는 내용 추가
 및 @chosensigan에 기존 정보 가져오게 할 것-->
-<% @chosensigan = "" %>
-<%= @chosensigan = "35/112/123/178/234/124/184/253/14" %>
 
-  
-  
-
-     
-  
-</div>
-
+ <p class="text4"> ** 되는 시간을 체크 혹은 드래그하세요 **</p>
 
 <script>
 jQuery(function($){
@@ -63,18 +55,16 @@ jQuery(function($){
 </script>
 
 
-<button type="button" class="btn btn-outline btn-primary pull-right" id="selectBtn">선택</button>
-
-<div class="container" id="select-table">
- 	<% for i in 1..10 do %>
+<button type="button" class="btn btn-lg " id="signup_btn">선택</button>
+<div class="mt-4 lasthello" id="select-table">
+ 	<% for i in 1..280 do %>
 	 <div class="drop" ><%="#{i}"%>/</div>
 	<% end %>	
 </div>
 
 <hr>
 
-
-  <%= form_tag home_usersigancreate_path do %>
-    <%= text_field_tag 'resultNum' %>
-    <%= button_to "저장하기", home_usersigancreate_path, method:"post" %>
-   <% end %>
+<%= form_tag home_usersigancreate_path do%>
+<%= text_field_tag 'resultNum' %>
+<%= button_to "저장하기", home_usersigancreate_path, method:"post" %>
+<% end %>

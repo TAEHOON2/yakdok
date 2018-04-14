@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :meetings
   root 'home#index'
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", registrations: 'registrations'}
   resources :posts
   
   get 'woonjang/jtest'
@@ -34,9 +34,9 @@ Rails.application.routes.draw do
   post 'gyosiyakdoks/gyosijungbosave'
   get 'gyosiyakdoks/gyosijungboview'
   
-  post 'gyosiyakdoks/usergyosiupdate'
+  post 'gyosiyakdoks/usergyosiupdate'  #유저 교시정보 save 버튼 
   
-  get 'gyosiyakdoks/updatedgyosiview'
+  get 'gyosiyakdoks/updatedgyosiview/:name' => 'gyosiyakdoks#updatedgyosiview'
   
   # get 'home/gyosiresult/'
   # The priority is based upon order of creation: first created -> highest priority.

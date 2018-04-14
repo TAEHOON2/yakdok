@@ -1,46 +1,102 @@
 
-<script>
-jQuery(function($){
-	$( document )
-		.drag("start",function( ev, dd ){
-			return $('<div class="selection" />')
-				.css('opacity', .65 )
-				.appendTo( document.body );
-		})
-		.drag(function( ev, dd ){
-			$( dd.proxy ).css({
-				top: Math.min( ev.pageY, dd.startY ),
-				left: Math.min( ev.pageX, dd.startX ),
-				height: Math.abs( ev.pageY - dd.startY ),
-				width: Math.abs( ev.pageX - dd.startX )
-			});
-		})
-		.drag("end",function( ev, dd ){
-			$( dd.proxy ).remove();
-		});
+<!--<script>-->
+<!--jQuery(function($){-->
+<!--	$( document )-->
+<!--		.drag("start",function( ev, dd ){-->
+<!--			return $('<div class="selection" />')-->
+<!--				.css('opacity', .65 )-->
+<!--				.appendTo( document.body );-->
+<!--		})-->
+<!--		.drag(function( ev, dd ){-->
+<!--			$( dd.proxy ).css({-->
+<!--				top: Math.min( ev.pageY, dd.startY ),-->
+<!--				left: Math.min( ev.pageX, dd.startX ),-->
+<!--				height: Math.abs( ev.pageY - dd.startY ),-->
+<!--				width: Math.abs( ev.pageX - dd.startX )-->
+<!--			});-->
+<!--		})-->
+<!--		.drag("end",function( ev, dd ){-->
+<!--			$( dd.proxy ).remove();-->
+<!--		});-->
 		
-	$('.table td')
-		.drop("start",function(){
-			$( this ).addClass("active");
-		})
-		.drop(function( ev, dd ){
-			$( this ).toggleClass("dropped");
-		})
-		.drop("end",function(){
-			$( this ).removeClass("active");
-		});
+<!--	$('.table td')-->
+<!--		.drop("start",function(){-->
+<!--			$( this ).addClass("active");-->
+<!--		})-->
+<!--		.drop(function( ev, dd ){-->
+<!--			$( this ).toggleClass("dropped");-->
+<!--		})-->
+<!--		.drop("end",function(){-->
+<!--			$( this ).removeClass("active");-->
+<!--		});-->
 			
-	$.drop({ multi: true });
+<!--	$.drop({ multi: true });-->
 
-});	
-</script>
+<!--});	-->
+<!--</script>-->
 
 
 <%= form_tag gyosiyakdoks_gyosiyakdokcreate_path do %>
 <article>
-  <p class="text4">아래의 주소를 친구들에게 보내서<br> 함께 약똑을 잡아보세요!</p>
-  <p class="text6">https://yakdok-rails-five-ahnroonjang.c9users.io/home/gyosipage/<%= @myroom.roomnumber%></p>
-  <p class="text4">** 가능한 시간 체크 후 완료 버튼 클릭! **<p>
+  <p class="text4 mt-4">아래의 주소를 친구들에게 보내서<br> 함께 약똑을 잡아보세요!</p>
+  <input type="text" id="copyTarget" value="https://yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%=@myroom.roomnumber%>"> <button id="copyButton">Copy</button><br><br>
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+});
+
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+    
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+    
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+}
+</script>
+  <p class="text4">** 가능한 시간 체크 후 제출 클릭! **<p>
 </article>
 
 <hr>
@@ -148,8 +204,9 @@ jQuery(function($){
        
       <div class="row">
         <%= hidden_field_tag "roomnumber", @myroom.roomnumber%>
-        <%= button_to "추가하기", gyosiyakdoks_gyosiyakdokcreate_path, :method => "post", :id => "signup_btn", :class => "btn btn-lg btn-block" %>
-        <%= button_to "기존에 저장했던 정보로 제출", '/', :method => 'get' %>
+        <%= button_to "제출", gyosiyakdoks_gyosiyakdokcreate_path, :method => "post", :id => "signup_btn", :class => "btn btn-lg btn-block" %>
+        <%= button_to "기존에 저장했던 정보로 제출", '/', :method => 'get',
+         :id => "signup_btn",:class => "btn btn-lg btn-block" %>
        <% end %>
       </div>
       

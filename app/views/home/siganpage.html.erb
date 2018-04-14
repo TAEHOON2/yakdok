@@ -1,38 +1,93 @@
 <div class="container">
+
   <p class="text4 mt-4">아래의 주소를 친구들에게 보내서<br> 함께 약똑을 잡아보세요!</p>
-  <p class="text6">yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%= @myroom.roomnumber%></p>
-  <br>
+  <input type="text" id="copyTarget" value="https://yakdok-rails-five-ahnroonjang.c9users.io/home/siganpage/<%=@myroom.roomnumber%>"> <button id="copyButton">Copy</button><br><br>
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+});
+
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+    
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("복사하기");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+    
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+}
+</script>
+ <br>
   <%= @month = "" %>
-  <%= @day = "" %>
-  <%= @myroom.roomnumber.split("-")[1] %>/<%= @myroom.roomnumber.split("-")[2] %>
-  
-  
-
-  <% if current_user.present? %>
-  <p class="text4">로그인을 한 이상 버튼만 눌러라. 나머지는 우리가 다 한다.</p>
-	  <%= @chosensigan = Usersigan.find_by(user: current_user).sigan %>
-	  <%= form_tag home_siganyakdokcreate_path do %>
-		<%=hidden_field_tag "roomnumber", @myroom.roomnumber%>
-		<%= hidden_field_tag "sigan", @chosensigan %>
-		<%= hidden_field_tag "count", @nalja %>
-		<%= hidden_field_tag "resultNum", @chosensigan %>
-		<%= submit_tag %>
-
-	
-		
+  <%= @date = "" %>
+  <% @date = @myroom.roomnumber.last(10) %>
+  		<!--로그인 한 경우 -->
+  <% if current_user.present? && Usersigan.find_by(user: current_user).present? %>
+  <% @resultNum = "" %>
+  <% @datecorrection = 0 %>
+  <p class="text4">로그인 상태에서는 저장해둔 정보로 시간이 제출이 됩니다.</p>
+	  <% @chosensigan = Usersigan.find_by(user: current_user).sigan %>
+	  <% @chosensigan.split("/").each do |x| %>
+	  <% @datecorrection = x.to_i + (8 - @date.to_time.wday) * 40 %>
+	  <% if @datecorrection > 280 %>
+	  <% @datecorrection = @datecorrection - 280 %>
+	  <% end %>
+	  <% @resultNum = "#{@datecorrection}"+"/"+@resultNum %>
 		<% end %>
-  <!--if 구문 추가해서 만약 로그인 상태라면 본인 시간 사용할 수 있게 하도록! 기존 정보 사용이 가능합니다 라는 내용 추가
-  및 @chosensigan에 기존 정보 가져오게 할 것-->
+	  <%= form_tag home_siganyakdokcreate_path do %>
+		<%= hidden_field_tag "roomnumber", @myroom.roomnumber%>
+		<%= hidden_field_tag "sigan", @resultNum %>
+		<%= hidden_field_tag "resultNum", @resultNum %>
+		<%= submit_tag %>
+		<% end %>
+		
+		<!--여기부터 일반인 -->
   <% else %>
+  <% if current_user.present? %>
+  <div> 아직 시간정보를 등록하지 않으셨군요! '내정보'로 가서 정보를 등록하거나 아래에서 임시로 정보를 제출해주세요.</div>
+  <% end %>
  <p class="text4"> ** 되는 시간을 체크 혹은 드래그하세요 **</p>
-
-
-  
-  
-
-
-
-
 <script>
 jQuery(function($){
 	$( document )
@@ -83,7 +138,7 @@ jQuery(function($){
 <%= submit_tag %>
 <% end %>
 
-
+<button type="button" class="btn btn-lg " id="selectBtn">선택</button>
 <div class="mt-4 lasthello" id="select-table">
  	<% for i in 1..280 do %>
 	 <div class="drop" ><%="#{i}"%>/</div>
@@ -92,7 +147,6 @@ jQuery(function($){
 
 <% end %>
 <hr>
-
      
-<button type="button" class="btn btn-lg " id="signup_btn">선택</button>
+
 </div>

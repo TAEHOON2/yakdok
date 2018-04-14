@@ -1,19 +1,17 @@
 <div class="container">
-    <p>교시정보 미리 등록해놓기</p>
+    <p class="text3 mt-4 mb-1">교시정보</p>
   <%= form_tag  gyosiyakdoks_gyosijungbosave_path do %>
-        <%= button_to "내 교시정보 등록하기 Go!", gyosiyakdoks_gyosijungbosave_path, :method => "post" %>
+            <% if Usergyosi.where(name: current_user.name).first %>
+                 <p><%= current_user.name %> 님은 현재 저장된 시간표가 있습니다</p>
+                 <%= button_to "내 가능시간 확인하러가기!", "/gyosiyakdoks/updatedgyosiview/#{@myyakdok1.email}", :method => "get" %>
+                 <%= button_to "내 가능시간 수정하기!", gyosiyakdoks_gyosijungbosave_path, :method => "post" %>
+            <% else %>
+                 <p><%= current_user.name %> 님은 아직 저장된 시간표가 없습니다</p>
+                 <%= button_to "내 교시정보 등록하기 Go!", gyosiyakdoks_gyosijungbosave_path, :method => "post" %>
+            <% end %>
        <% end %>
-      </div>
+
     <p class="text3 mt-4 mb-1">여기에 현재 시간 기반 정보 표시</p>
     <%= button_to "시간기반 정보 업데이트 하기", home_usersiganinput_path, method:"get" %>
 </div>
 
-
-      
-        
-        
-        
-        
-        
-        
-       
